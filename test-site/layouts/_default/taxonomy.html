@@ -1,0 +1,27 @@
+
+{{ define "main" }}
+
+<main>
+  <p>This is made with the taxonomy.hmtl template in the project. It overrides the "taxonomy" template in MyTheme.<br>
+    Because there is at least one template, and I listed "ingredientes" as a taxonomy in the config file Hugo creates the page.<br>
+    I have not included any links to it one the website but the page still exists.<p>
+  <h1>{{ strings.FirstUpper .Data.Singular }} {{ .Title }}</h1>
+<div class="catalogue">
+  {{ range (.Paginate .Pages).Pages }}
+    {{ .Render "summary" }}
+  {{ end }}
+</div>
+
+<div class="pagination">
+  {{ if .Paginator.HasPrev }}
+    <a href="{{ .Paginator.Prev.URL }}" class="left arrow">&#8592;</a>
+  {{ end }}
+  {{ if .Paginator.HasNext }}
+    <a href="{{ .Paginator.Next.URL }}" class="right arrow">&#8594;</a>
+  {{ end }}
+
+  <span>{{ .Paginator.PageNumber }}</span>
+</div>
+</main>
+
+{{ end }}

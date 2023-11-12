@@ -1,0 +1,18 @@
+
+<ul class="row nav-menu">
+  {{ range .Site.Menus.main2 }}
+ 
+        <li class="menupage">
+            <a class="black" href="{{ .URL | absLangURL }}">
+                {{ .Pre }}
+                <span>{{ .Name }}</span>
+                {{ .Post }}
+            </a>
+        </li>
+    {{ end }}
+    {{ range $.Site.Home.AllTranslations }}
+    <li class="menupage language" id="{{ .Language.LanguageName}}"><a class="black" href="{{ .Permalink }}">{{ .Language.LanguageName }}</a></li>
+            {{ end }}
+    
+
+</ul>
