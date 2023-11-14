@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tei="http://www.tei-c.org/ns/1.0"
-    exclude-result-prefixes="tei xs" version="2.0">
+    exclude-result-prefixes="xs" version="2.0">
     <xsl:output encoding="UTF-8" method="html"/> 
     
     <!-- row -->
     <xsl:template match="row">
-
-        
-        <xsl:apply-templates/>
-        
+     <xsl:apply-templates/> 
     </xsl:template>
     <xsl:template match="title"/>
     <xsl:template match="id"/>
@@ -61,14 +58,6 @@
                 </li>
             </xsl:for-each>
         </ol>  
-    </xsl:template>
-    
-    <!--default that tells what elements are not defined in this document-->
-    <xsl:template match="tei:*">
-        <xsl:message>
-            <xsl:text>unknown element: </xsl:text>
-            <xsl:value-of select="local-name()"/>
-        </xsl:message>
     </xsl:template>
     
 </xsl:stylesheet>

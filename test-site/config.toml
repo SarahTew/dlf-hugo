@@ -18,12 +18,9 @@ languageName = "Español"
 weight = 1
 
 [taxonomies]
-
 ingredients = "ingredientes"
 course = "plato"
 tag = 'etiquettas'
-[[related.indices]]
-name = 'ingredientes'
 [menu]
 
 [[languages.es.menu.main2]]
